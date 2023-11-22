@@ -1,0 +1,48 @@
+{
+  "name": "ts-apollo-server-node-18",
+  "version": "1.0.0",
+  "config": {
+    "name": "apollofunc"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:watch": "tsc -w",
+    "start": " NODE_ENV=develope ts-node index.ts",
+    "build-fn": "copyfiles -f ./package.json function",
+    "build-ts": "tsc",
+    "build": "npm run build-fn && faas-cli build -f $npm_package_config_name.yml",
+    "deploy": "faas-cli deploy -f $npm_package_config_name.yml",
+    "up": "npm run build && npm run deploy"
+  },
+  "keywords": [
+    "Openfaas",
+    "Graphql",
+    "Apollo",
+    "Serverless",
+    "FaaS"
+  ],
+  "author": "AndlibMehndi Naqvi",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/rover": "0.21.0",
+    "apollo-graphql": "^0.9.0",
+    "apollo-server-express": "^2.3.3",
+    "class-validator": "^0.13.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.2",
+    "graphql": "^15.5.0",
+    "graphql-tag": "^2.11.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
+  },
+  "devDependencies": {
+    "@apollo/federation": "^0.16.11",
+    "@types/jest": "27.0.1",
+    "@types/node": "^14.14.41",
+    "copyfiles": "^2.1.0",
+    "ts-node": "^8.0.2",
+    "typescript": "4.9.5"
+  }
+}

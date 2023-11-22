@@ -1,0 +1,2 @@
+language: ts-apollo-server-node-18
+fprocess: node index.js
